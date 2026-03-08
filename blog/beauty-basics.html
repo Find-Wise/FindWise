@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Beauty basics for an easy self-care routine | FindWise</title>
+  <style>
+:root{
+  --bg:#fff6f8;
+  --panel:#ffffff;
+  --primary:#e63946;
+  --primary-soft:#ffdde3;
+  --accent:#ff6b81;
+  --text:#2f2f35;
+  --muted:#6b7280;
+  --border:#f3c9d2;
+  --shadow:0 10px 30px rgba(230,57,70,.08);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  font-family:Arial, Helvetica, sans-serif;
+  color:var(--text);
+  background:linear-gradient(180deg,#fff7f9 0%,#fff0f4 100%);
+}
+a{color:var(--primary);text-decoration:none}
+img{max-width:100%;display:block}
+.container{max-width:1160px;margin:0 auto;padding:0 20px}
+.nav{
+  position:sticky;top:0;z-index:50;
+  background:rgba(255,255,255,.88);backdrop-filter: blur(10px);
+  border-bottom:1px solid #f5d7de;
+}
+.nav-inner{
+  display:flex;justify-content:space-between;align-items:center;
+  padding:14px 0;
+}
+.brand{display:flex;align-items:center;gap:12px;font-weight:700;color:var(--text)}
+.brand img{width:44px;height:44px;border-radius:50%}
+.brand span{font-size:1.1rem}
+.menu{display:flex;flex-wrap:wrap;gap:18px;font-size:.96rem}
+.hero{padding:70px 0 40px}
+.hero-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:30px;align-items:center}
+.badge{
+  display:inline-block;padding:8px 14px;border-radius:999px;
+  background:var(--primary-soft);color:var(--primary);font-weight:700;font-size:.9rem
+}
+h1{font-size:3rem;line-height:1.05;margin:18px 0 14px}
+.lead{font-size:1.08rem;color:var(--muted);max-width:720px}
+.hero-card{
+  background:var(--panel); border:1px solid var(--border); border-radius:24px;
+  box-shadow:var(--shadow); padding:24px;
+}
+.btns{display:flex;gap:14px;flex-wrap:wrap;margin-top:24px}
+.btn{
+  display:inline-block;padding:13px 18px;border-radius:12px;
+  font-weight:700;border:1px solid var(--primary)
+}
+.btn.primary{background:var(--primary);color:#fff}
+.btn.secondary{background:#fff;color:var(--primary)}
+.section{padding:28px 0 18px}
+.section h2{font-size:2rem;margin:0 0 12px}
+.section p.sub{color:var(--muted);margin:0 0 22px}
+.grid{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:18px
+}
+.card{
+  background:#fff;border:1px solid var(--border);border-radius:20px;padding:18px;
+  box-shadow:var(--shadow)
+}
+.card h3{margin:0 0 8px;font-size:1.05rem}
+.card p{margin:0;color:var(--muted);font-size:.95rem}
+.category-icon{
+  width:52px;height:52px;border-radius:14px;background:var(--primary-soft);
+  color:var(--primary);display:grid;place-items:center;font-size:1.3rem;margin-bottom:12px
+}
+.product-grid{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:18px
+}
+.product{
+  background:#fff;border:1px solid var(--border);border-radius:22px;padding:18px;box-shadow:var(--shadow)
+}
+.thumb{
+  height:150px;border-radius:16px;background:linear-gradient(135deg,#ffd6dd,#fff);margin-bottom:14px;
+  display:grid;place-items:center;font-size:2.1rem
+}
+.tag{
+  display:inline-block;font-size:.78rem;font-weight:700;border-radius:999px;
+  background:#fff1f4;color:var(--primary);padding:6px 10px;margin-bottom:10px
+}
+.price{font-size:1.15rem;font-weight:700;margin:10px 0}
+.small{font-size:.88rem;color:var(--muted)}
+.linkrow{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
+.linkpill{
+  display:inline-block;padding:10px 12px;border-radius:999px;
+  background:#fff1f4;color:var(--primary);font-weight:700;font-size:.9rem
+}
+.split{
+  display:grid;grid-template-columns:1fr 1fr;gap:20px
+}
+.social-box, .blog-card, .contact-box{
+  background:#fff;border:1px solid var(--border);border-radius:22px;padding:22px;box-shadow:var(--shadow)
+}
+.list{margin:10px 0 0;padding-left:18px;color:var(--muted)}
+.footer{
+  margin-top:34px;padding:28px 0;border-top:1px solid #f3d5dd;color:var(--muted);font-size:.95rem
+}
+.blog-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px}
+.blog-card h3{margin:0 0 10px}
+.notice{
+  background:#fff8e8;border:1px solid #f4df9c;color:#775d00;border-radius:16px;padding:16px;margin-top:18px;font-size:.92rem
+}
+@media (max-width: 820px){
+  .hero-grid,.split{grid-template-columns:1fr}
+  h1{font-size:2.35rem}
+  .menu{display:none}
+}
+</style>
+</head>
+<body>
+  <nav class="nav">
+    <div class="container nav-inner">
+      <a class="brand" href="../index.html">
+        <img src="../assets/findwise_logo.png" alt="FindWise logo">
+        <span>FindWise</span>
+      </a>
+      <div class="menu"><a href="../index.html#categories">Categories</a><a href="../index.html#top-picks">Top Picks</a><a href="../index.html#blog">Blog</a></div>
+    </div>
+  </nav>
+  <main class="section">
+    <div class="container">
+      <div class="blog-card">
+        <h1 style="font-size:2.2rem;margin-top:0">Beauty basics for an easy self-care routine</h1>
+        
+<p class="sub">Beauty content can be simple, elegant, and highly clickable when organized around routines.</p>
+<ul class="list">
+  <li>Hydrating skincare starters</li>
+  <li>Gentle cleansers and moisturizers</li>
+  <li>Self-care sets and giftable beauty kits</li>
+  <li>Everyday essentials for glow and freshness</li>
+</ul>
+<p>For stronger trust, keep your product descriptions practical and specific rather than overly promotional.</p>
+
+        <p style="margin-top:24px"><a href="../index.html">← Back to homepage</a></p>
+      </div>
+    </div>
+  </main>
+</body>
+</html>

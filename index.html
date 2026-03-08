@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FindWise | Smart Finds for Everyday Living</title>
+  <meta name="description" content="FindWise curates smart product picks across food, snacks, beauty, vitamins, home, kitchen, and tech.">
+  <style>
+:root{
+  --bg:#fff6f8;
+  --panel:#ffffff;
+  --primary:#e63946;
+  --primary-soft:#ffdde3;
+  --accent:#ff6b81;
+  --text:#2f2f35;
+  --muted:#6b7280;
+  --border:#f3c9d2;
+  --shadow:0 10px 30px rgba(230,57,70,.08);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  font-family:Arial, Helvetica, sans-serif;
+  color:var(--text);
+  background:linear-gradient(180deg,#fff7f9 0%,#fff0f4 100%);
+}
+a{color:var(--primary);text-decoration:none}
+img{max-width:100%;display:block}
+.container{max-width:1160px;margin:0 auto;padding:0 20px}
+.nav{
+  position:sticky;top:0;z-index:50;
+  background:rgba(255,255,255,.88);backdrop-filter: blur(10px);
+  border-bottom:1px solid #f5d7de;
+}
+.nav-inner{
+  display:flex;justify-content:space-between;align-items:center;
+  padding:14px 0;
+}
+.brand{display:flex;align-items:center;gap:12px;font-weight:700;color:var(--text)}
+.brand img{width:44px;height:44px;border-radius:50%}
+.brand span{font-size:1.1rem}
+.menu{display:flex;flex-wrap:wrap;gap:18px;font-size:.96rem}
+.hero{padding:70px 0 40px}
+.hero-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:30px;align-items:center}
+.badge{
+  display:inline-block;padding:8px 14px;border-radius:999px;
+  background:var(--primary-soft);color:var(--primary);font-weight:700;font-size:.9rem
+}
+h1{font-size:3rem;line-height:1.05;margin:18px 0 14px}
+.lead{font-size:1.08rem;color:var(--muted);max-width:720px}
+.hero-card{
+  background:var(--panel); border:1px solid var(--border); border-radius:24px;
+  box-shadow:var(--shadow); padding:24px;
+}
+.btns{display:flex;gap:14px;flex-wrap:wrap;margin-top:24px}
+.btn{
+  display:inline-block;padding:13px 18px;border-radius:12px;
+  font-weight:700;border:1px solid var(--primary)
+}
+.btn.primary{background:var(--primary);color:#fff}
+.btn.secondary{background:#fff;color:var(--primary)}
+.section{padding:28px 0 18px}
+.section h2{font-size:2rem;margin:0 0 12px}
+.section p.sub{color:var(--muted);margin:0 0 22px}
+.grid{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:18px
+}
+.card{
+  background:#fff;border:1px solid var(--border);border-radius:20px;padding:18px;
+  box-shadow:var(--shadow)
+}
+.card h3{margin:0 0 8px;font-size:1.05rem}
+.card p{margin:0;color:var(--muted);font-size:.95rem}
+.category-icon{
+  width:52px;height:52px;border-radius:14px;background:var(--primary-soft);
+  color:var(--primary);display:grid;place-items:center;font-size:1.3rem;margin-bottom:12px
+}
+.product-grid{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:18px
+}
+.product{
+  background:#fff;border:1px solid var(--border);border-radius:22px;padding:18px;box-shadow:var(--shadow)
+}
+.thumb{
+  height:150px;border-radius:16px;background:linear-gradient(135deg,#ffd6dd,#fff);margin-bottom:14px;
+  display:grid;place-items:center;font-size:2.1rem
+}
+.tag{
+  display:inline-block;font-size:.78rem;font-weight:700;border-radius:999px;
+  background:#fff1f4;color:var(--primary);padding:6px 10px;margin-bottom:10px
+}
+.price{font-size:1.15rem;font-weight:700;margin:10px 0}
+.small{font-size:.88rem;color:var(--muted)}
+.linkrow{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
+.linkpill{
+  display:inline-block;padding:10px 12px;border-radius:999px;
+  background:#fff1f4;color:var(--primary);font-weight:700;font-size:.9rem
+}
+.split{
+  display:grid;grid-template-columns:1fr 1fr;gap:20px
+}
+.social-box, .blog-card, .contact-box{
+  background:#fff;border:1px solid var(--border);border-radius:22px;padding:22px;box-shadow:var(--shadow)
+}
+.list{margin:10px 0 0;padding-left:18px;color:var(--muted)}
+.footer{
+  margin-top:34px;padding:28px 0;border-top:1px solid #f3d5dd;color:var(--muted);font-size:.95rem
+}
+.blog-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px}
+.blog-card h3{margin:0 0 10px}
+.notice{
+  background:#fff8e8;border:1px solid #f4df9c;color:#775d00;border-radius:16px;padding:16px;margin-top:18px;font-size:.92rem
+}
+@media (max-width: 820px){
+  .hero-grid,.split{grid-template-columns:1fr}
+  h1{font-size:2.35rem}
+  .menu{display:none}
+}
+</style>
+</head>
+<body>
+  <nav class="nav">
+    <div class="container nav-inner">
+      <a class="brand" href="#top">
+        <img src="assets/findwise_logo.png" alt="FindWise logo">
+        <span>FindWise</span>
+      </a>
+      <div class="menu">
+        <a href="#categories">Categories</a>
+        <a href="#top-picks">Top Picks</a>
+        <a href="#social">Social</a>
+        <a href="#blog">Blog</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="hero" id="top">
+    <div class="container hero-grid">
+      <div>
+        <span class="badge">Find Smart. Choose Wise.</span>
+        <h1>Smart product discoveries for home, wellness, beauty, snacks, and more.</h1>
+        <p class="lead">
+          FindWise is a curated discovery brand built to help shoppers find better products faster.
+          Explore handpicked favorites across food, snacks, beauty products, vitamins, kitchen tools,
+          home essentials, and tech.
+        </p>
+        <div class="btns">
+          <a class="btn primary" href="#top-picks">Browse Top Picks</a>
+          <a class="btn secondary" href="#social">Follow on Social</a>
+        </div>
+        <div class="notice">
+          Replace the sample links below with your real affiliate URLs, Instagram profile, Pinterest boards,
+          and Facebook page when you're ready to publish.
+        </div>
+      </div>
+      <div class="hero-card">
+        <h3 style="margin-top:0">What FindWise can feature</h3>
+        <ul class="list">
+          <li>Amazon affiliate product recommendations</li>
+          <li>Instagram reels and product highlights</li>
+          <li>Pinterest boards for product inspiration</li>
+          <li>Top deals and seasonal picks</li>
+          <li>Short blog reviews and buying guides</li>
+        </ul>
+      </div>
+    </div>
+  </header>
+
+  <section class="section" id="categories">
+    <div class="container">
+      <h2>Shop by category</h2>
+      <p class="sub">A broader product mix gives FindWise room to grow into a full discovery brand.</p>
+      <div class="grid">
+        <div class="card"><div class="category-icon">🍳</div><h3>Kitchen Gadgets</h3><p>Small appliances, cookware, prep tools, and cooking helpers.</p></div>
+        <div class="card"><div class="category-icon">🏠</div><h3>Home Essentials</h3><p>Smart household products for comfort, storage, and everyday use.</p></div>
+        <div class="card"><div class="category-icon">💻</div><h3>Tech & Electronics</h3><p>Useful gadgets, accessories, charging tools, and desk upgrades.</p></div>
+        <div class="card"><div class="category-icon">🍲</div><h3>Food</h3><p>Pantry staples, sauces, ready-to-cook items, and specialty foods.</p></div>
+        <div class="card"><div class="category-icon">🍿</div><h3>Snacks</h3><p>Tasty everyday snack ideas, healthy bites, and on-the-go favorites.</p></div>
+        <div class="card"><div class="category-icon">💄</div><h3>Beauty Products</h3><p>Skincare, makeup, grooming, self-care, and personal care picks.</p></div>
+        <div class="card"><div class="category-icon">💊</div><h3>Vitamins</h3><p>Daily wellness support, immune health, and supplement essentials.</p></div>
+        <div class="card"><div class="category-icon">🧘</div><h3>Health & Wellness</h3><p>Mind-body wellbeing, comfort products, and healthy lifestyle tools.</p></div>
+        <div class="card"><div class="category-icon">🏋️</div><h3>Fitness Gear</h3><p>Home workout accessories and wellness support items.</p></div>
+        <div class="card"><div class="category-icon">🔥</div><h3>Top Deals</h3><p>Featured discounts, seasonal sale picks, and editor favorites.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="top-picks">
+    <div class="container">
+      <h2>Featured product cards</h2>
+      <p class="sub">These sample cards can be swapped with your real affiliate products anytime.</p>
+      <div class="product-grid">
+        <article class="product">
+          <div class="thumb">🍟</div>
+          <span class="tag">Kitchen Pick</span>
+          <h3>Compact Air Fryer</h3>
+          <p class="small">Fast, easy meals with less oil and countertop-friendly size.</p>
+          <div class="price">$89.99</div>
+          <div class="linkrow">
+            <a class="linkpill" href="#">Affiliate Link</a>
+            <a class="linkpill" href="#">Instagram Reel</a>
+          </div>
+        </article>
+
+        <article class="product">
+          <div class="thumb">🥤</div>
+          <span class="tag">Home & Kitchen</span>
+          <h3>High-Speed Blender</h3>
+          <p class="small">Smoothies, sauces, and quick prep for everyday cooking.</p>
+          <div class="price">$129.99</div>
+          <div class="linkrow">
+            <a class="linkpill" href="#">Affiliate Link</a>
+            <a class="linkpill" href="#">Pinterest Pin</a>
+          </div>
+        </article>
+
+        <article class="product">
+          <div class="thumb">🍫</div>
+          <span class="tag">Snack Favorite</span>
+          <h3>Protein Snack Box</h3>
+          <p class="small">Easy snack assortment for work, travel, and quick energy.</p>
+          <div class="price">$24.99</div>
+          <div class="linkrow">
+            <a class="linkpill" href="#">Affiliate Link</a>
+            <a class="linkpill" href="#">Review Post</a>
+          </div>
+        </article>
+
+        <article class="product">
+          <div class="thumb">✨</div>
+          <span class="tag">Beauty Find</span>
+          <h3>Hydrating Skincare Set</h3>
+          <p class="small">Simple daily care for glow, hydration, and skin comfort.</p>
+          <div class="price">$39.99</div>
+          <div class="linkrow">
+            <a class="linkpill" href="#">Affiliate Link</a>
+            <a class="linkpill" href="#">Instagram Post</a>
+          </div>
+        </article>
+
+        <article class="product">
+          <div class="thumb">💊</div>
+          <span class="tag">Wellness Pick</span>
+          <h3>Daily Vitamin Bundle</h3>
+          <p class="small">Convenient basics for immunity, energy, and routine wellness.</p>
+          <div class="price">$28.99</div>
+          <div class="linkrow">
+            <a class="linkpill" href="#">Affiliate Link</a>
+            <a class="linkpill" href="#">Pinterest Board</a>
+          </div>
+        </article>
+
+        <article class="product">
+          <div class="thumb">🔌</div>
+          <span class="tag">Tech Deal</span>
+          <h3>Portable Charger</h3>
+          <p class="small">Reliable power backup for workdays, travel, and errands.</p>
+          <div class="price">$32.99</div>
+          <div class="linkrow">
+            <a class="linkpill" href="#">Affiliate Link</a>
+            <a class="linkpill" href="#">Top Deals</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="social">
+    <div class="container">
+      <h2>Instagram, Pinterest, and Facebook</h2>
+      <p class="sub">Use these sections to send visitors to your social platforms and content.</p>
+      <div class="split">
+        <div class="social-box">
+          <h3 style="margin-top:0">Instagram feed section</h3>
+          <p class="small">Add your handle and direct visitors to reels, reviews, and product showcases.</p>
+          <div class="linkrow">
+            <a class="linkpill" href="#">@find_wise</a>
+            <a class="linkpill" href="#">Watch Reels</a>
+            <a class="linkpill" href="#">Latest Posts</a>
+          </div>
+          <ul class="list">
+            <li>Product demos</li>
+            <li>Quick buying tips</li>
+            <li>Before/after style reviews</li>
+          </ul>
+        </div>
+
+        <div class="social-box">
+          <h3 style="margin-top:0">Pinterest boards section</h3>
+          <p class="small">Add links to your product boards for traffic and evergreen discovery.</p>
+          <div class="linkrow">
+            <a class="linkpill" href="#">Kitchen Finds Board</a>
+            <a class="linkpill" href="#">Beauty Board</a>
+            <a class="linkpill" href="#">Snack Ideas Board</a>
+          </div>
+          <ul class="list">
+            <li>Evergreen product inspiration</li>
+            <li>Seasonal trends and gift ideas</li>
+            <li>Traffic back to affiliate content</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="split" style="margin-top:20px">
+        <div class="social-box">
+          <h3 style="margin-top:0">Facebook page section</h3>
+          <p class="small">Cross-post your Instagram content and share deal alerts or blog reviews.</p>
+          <div class="linkrow">
+            <a class="linkpill" href="#">Facebook Page</a>
+            <a class="linkpill" href="#">Deals & Updates</a>
+          </div>
+        </div>
+
+        <div class="social-box">
+          <h3 style="margin-top:0">Top deals area</h3>
+          <p class="small">Highlight limited-time offers and best-value favorites here.</p>
+          <div class="linkrow">
+            <a class="linkpill" href="#">Today's Deals</a>
+            <a class="linkpill" href="#">Under $25</a>
+            <a class="linkpill" href="#">Best Sellers</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="blog">
+    <div class="container">
+      <h2>Blog and reviews</h2>
+      <p class="sub">Short written reviews can improve trust and help your affiliate content feel more professional.</p>
+      <div class="blog-grid">
+        <article class="blog-card">
+          <h3>5 kitchen gadgets worth buying this month</h3>
+          <p class="small">A quick guide to practical, affordable tools that save time in the kitchen.</p>
+          <p><a href="blog/kitchen-gadgets.html">Read article →</a></p>
+        </article>
+        <article class="blog-card">
+          <h3>Healthy snack picks for busy days</h3>
+          <p class="small">Simple snack ideas for work, travel, and everyday energy.</p>
+          <p><a href="blog/healthy-snacks.html">Read article →</a></p>
+        </article>
+        <article class="blog-card">
+          <h3>Beauty basics for an easy self-care routine</h3>
+          <p class="small">Starter beauty and skincare picks for a cleaner, simpler routine.</p>
+          <p><a href="blog/beauty-basics.html">Read article →</a></p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="contact">
+    <div class="container">
+      <h2>Contact & collaboration</h2>
+      <div class="contact-box">
+        <p class="small">For partnerships, product features, and brand inquiries:</p>
+        <p><strong>Email:</strong> hello@findwise.com</p>
+        <p><strong>Instagram:</strong> @find_wise</p>
+        <p><strong>Pinterest:</strong> pinterest.com/findwise</p>
+        <p><strong>Facebook:</strong> facebook.com/findwise</p>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      © 2026 FindWise · Curated product discoveries across food, snacks, beauty, vitamins, home, and tech.
+    </div>
+  </footer>
+</body>
+</html>
